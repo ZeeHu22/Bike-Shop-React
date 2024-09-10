@@ -225,7 +225,7 @@ LANDING
 */
 
 #landing {
-  background-color: rgba(100, 214, 66, 0.1)
+  background-color: rgba(100, 214, 66, 0.1);
 }
 
 header {
@@ -363,7 +363,7 @@ FEATURES
 
 #features {
   padding-top: 8vw;
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: rgba(100, 214, 66, 0.1);
 }
 
 .bikes {
@@ -385,6 +385,7 @@ FEATURES
 .bike__img {
   max-height: 320px;
   max-width: 250px;
+  border: 0.5px solid #bfbfbf;
   transition: all 300ms ease;
 }
 
@@ -454,7 +455,7 @@ EXPLORE
 */
 
 #explore {
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: rgba(100, 214, 66, 0.1);
 }
 
 /* 
@@ -498,7 +499,7 @@ bikes PAGE
 */
 
 #bikes__body {
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: rgba(100, 214, 66, 0.1);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -572,7 +573,7 @@ select {
 }
 
 .bike__selected--figure {
-  width: 40%;
+  width: 60%;
   padding: 16px 32px;
   display: flex;
   justify-content: center;
@@ -582,11 +583,13 @@ select {
 .bike__selected--img {
   max-height: 500px;
   width: auto;
+  height: auto;
   max-width: 100%;
+  border: 0.5px solid #bfbfbf;
 }
 
 .bike__selected--description {
-  width: 60%;
+  width: 40%;
   padding: 16px 32px;
   display: flex;
   flex-direction: column;

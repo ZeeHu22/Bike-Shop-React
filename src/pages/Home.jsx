@@ -1,22 +1,18 @@
 import React from "react";
 import Landing from "../components/Landing";
 import Highlights from "../components/Highlights";
-import Features from "../components/Featured";
-import CheapestBikes from "../components/CheapestBikes";
+import Featured from "../components/Featured";
+import Discounted from "../components/Discounted";
 import Explore from "../components/Explore";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Landing />
-      <main>
-        <Highlights />
-        <Features />
-        <CheapestBikes />
-        <Explore />
-      </main>
+      <Highlights />
+      <Featured />
+      <Discounted />
+      <Explore />
     </>
   );
-};
-
-export default Home;
+}

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BikeLogo from "../assets/BikeLogo.png";
 import { Link } from "react-router-dom";
 
-const Nav = ({ numberOfItems }) => {
+const Nav = () => {
   function openMenu() {
     document.body.classList += " menu--open";
   }
@@ -16,7 +16,7 @@ const Nav = ({ numberOfItems }) => {
     <nav>
       <div className="nav__container">
         <Link to="/">
-          <img className="logo" src={BikeLogo} alt="" />
+          <img src={BikeLogo} alt="Logo" className="logo" />
         </Link>
         <ul className="nav__links">
           <li className="nav__list">
@@ -25,7 +25,7 @@ const Nav = ({ numberOfItems }) => {
             </Link>
           </li>
           <li className="nav__list">
-            <Link to="/books" className="nav__link nav__link--primary">
+            <Link to="/bikes" className="nav__link">
               Bikes
             </Link>
           </li>
@@ -36,29 +36,26 @@ const Nav = ({ numberOfItems }) => {
             <Link to="/cart" className="nav__link">
               <FontAwesomeIcon icon="shopping-cart" />
             </Link>
-            {numberOfItems > 0 && (
-              <span className="cart__length">{numberOfItems}</span>
-            )}
+            <span className="cart__length">2</span>
           </li>
         </ul>
-
         <div className="menu__backdrop">
           <button className="btn__menu btn__menu--close" onClick={closeMenu}>
             <FontAwesomeIcon icon="times" />
           </button>
           <ul className="menu__links">
             <li className="menu__list">
-              <Link to="/" className="menu__link" onClick={closeMenu}>
+              <Link to="/" className="menu__link">
                 Home
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/books" className="menu__link" onClick={closeMenu}>
+              <Link to="/bikes" className="menu__link">
                 Bikes
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/cart" className="menu__link" onClick={closeMenu}>
+              <Link to="/cart" className="menu__link">
                 Cart
               </Link>
             </li>

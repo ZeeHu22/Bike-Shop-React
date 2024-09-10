@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Bike from "../components/Bike";
+import React, { useState } from "react";
+import Bike from "../components/ui/Bike";
 
-const Bikes = ({ bikes: initalBikes }) => {
-  const [bikes, setBikes] = useState();
-
-  useEffect(() => {
-    setBikes(initalBikes);
-  }, [initalBikes]);
+export default function Bikes({ bikes: initialBikes }) {
+  const [bikes, setBikes] = useState(initialBikes);
 
   function filterBikes(filter) {
     switch (filter) {
@@ -49,8 +45,8 @@ const Bikes = ({ bikes: initalBikes }) => {
                 </h2>
                 <select
                   id="filter"
+                  defaultValue="DEFAULT"
                   onChange={(event) => filterBikes(event.target.value)}
-                  defaultValue={"DEFAULT"}
                 >
                   <option value="DEFAULT" disabled>
                     Sort
@@ -61,9 +57,9 @@ const Bikes = ({ bikes: initalBikes }) => {
                 </select>
               </div>
               <div className="bikes">
-                {bikes && bikes.map((bike) => {
-                  return <Bike bike={bike} key={bike.id} />;
-                })}
+                {bikes.map((bike) => (
+                  <Bike bike={bike} key={bike.id} />
+                ))}
               </div>
             </div>
           </div>
@@ -71,6 +67,4 @@ const Bikes = ({ bikes: initalBikes }) => {
       </main>
     </div>
   );
-};
-
-export default Bikes;
+}

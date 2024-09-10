@@ -1,5 +1,6 @@
 import React from "react";
 import unDraw from '../assets/undraw_ride_a_bicycle.svg';
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -11,9 +12,9 @@ const Landing = () => {
             <h2>
               Find your dream bike with <span className="green">Bike Shop</span>
             </h2>
-            <a href="#features">
+            <Link to="#features">
               <button className="btn">Browse bikes</button>
-            </a>
+            </Link>
           </div>
           <figure className="header__img--wrapper">
             <img src={unDraw} alt="" />

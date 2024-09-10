@@ -1,6 +1,6 @@
 import React from "react";
-import Bike from "./Bike";
-import BestBikes from "./ui/BestBikes";
+import Bike from "./ui/Bike";
+import { bikes } from "../data";
 
 const Featured = () => {
   return (
@@ -10,7 +10,14 @@ const Featured = () => {
           <h2 className="section__title">
             Featured <span className="green">Bikes</span>
           </h2>
-          <BestBikes />
+          <div className="bikes">
+            {bikes
+            .filter((bike) => bike.rating === 5)
+            .slice(0, 4)
+            .map((bike) => (
+                <Bike bike={bike} key={bike.id} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
