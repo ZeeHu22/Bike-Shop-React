@@ -1,60 +1,72 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BikeLogo from '../assets/BikeLogo.png';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BikeLogo from "../assets/BikeLogo.png";
+import { Link } from "react-router-dom";
 
-const Nav = () => {
-    return (
-        <nav>
-            <div className="nav__container">
-                <a href="/">
-                    <img src={BikeLogo} alt="" className='logo' />
-                </a>
-                <ul className='nav__links'>
-                    <li className='nav__list'>
-                        <a href="/" className='nav__link'>
-                            Home
-                        </a>
-                    </li>
-                    <li className='nav__list'>
-                        <a href="/" className='nav__link'>
-                            Bikes
-                        </a>
-                    </li>
-                    <button className='btn__menu'>
-                        <FontAwesomeIcon icon="bars" />
-                    </button>
-                    <li>
-                        <a href="/cart" className='nav__link'>
-                            <FontAwesomeIcon icon ="shopping-cart"/>
-                        </a>
-                        <span className='cart__length'>2</span>
-                    </li>
-                </ul>
-                <div className="menu__backdrop">
-                    <button className='btn__menu btn__menu--close'>
-                        <FontAwesomeIcon icon="times" />
-                    </button>
-                    <ul className="menu__links">
-                        <li className="menu__list">
-                            <a href="/" className="menu__link">
-                                Home
-                            </a>
-                        </li>
-                        <li className="menu__list">
-                            <a href="/" className="menu__link">
-                                Bikes
-                            </a>
-                        </li>
-                        <li className="menu__list">
-                            <a href="/" className="menu__link">
-                                Cart
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    );
-}
+const Nav = ({ numberOfItems }) => {
+  function openMenu() {
+    document.body.classList += " menu--open";
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
+
+  return (
+    <nav>
+      <div className="nav__container">
+        <Link to="/">
+          <img className="logo" src={BikeLogo} alt="" />
+        </Link>
+        <ul className="nav__links">
+          <li className="nav__list">
+            <Link to="/" className="nav__link">
+              Home
+            </Link>
+          </li>
+          <li className="nav__list">
+            <Link to="/books" className="nav__link nav__link--primary">
+              Bikes
+            </Link>
+          </li>
+          <button className="btn__menu" onClick={openMenu}>
+            <FontAwesomeIcon icon="bars" />
+          </button>
+          <li className="nav__icon">
+            <Link to="/cart" className="nav__link">
+              <FontAwesomeIcon icon="shopping-cart" />
+            </Link>
+            {numberOfItems > 0 && (
+              <span className="cart__length">{numberOfItems}</span>
+            )}
+          </li>
+        </ul>
+
+        <div className="menu__backdrop">
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
+            <FontAwesomeIcon icon="times" />
+          </button>
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/" className="menu__link" onClick={closeMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/books" className="menu__link" onClick={closeMenu}>
+                Bikes
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/cart" className="menu__link" onClick={closeMenu}>
+                Cart
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default Nav;

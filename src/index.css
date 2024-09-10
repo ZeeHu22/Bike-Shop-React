@@ -46,10 +46,10 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
 ul {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 li {
@@ -110,10 +110,10 @@ button:active {
   font-weight: bold;
   padding: 8px;
   color: #07d400;
+  margin-left: 16px;
 }
 
 .nav__list {
-  margin-left: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
