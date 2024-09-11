@@ -12,7 +12,7 @@ const Landing = () => {
             <h2>
               Find your dream bike with <span className="green">Bike Shop</span>
             </h2>
-            <Link to="#features">
+            <Link to="/bikes">
               <button className="btn">Browse bikes</button>
             </Link>
           </div>
